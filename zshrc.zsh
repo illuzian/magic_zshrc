@@ -39,7 +39,7 @@ typeset -A TO_INSTALL
 TO_INSTALL=('bc' 'bc' 'jq' 'jq' 'gem' 'ruby' 'sqlite3' 'sqlite3')
 # Package managers to iterate through.
 typeset -A PACKAGE_MANAGERS
-PACKAGE_MANAGERS=('brew' 'brew install' 'apt-get' 'apt install')
+PACKAGE_MANAGERS=('brew' 'brew install' 'apt-get' 'sudo apt install')
 
 for PKG_MAN in "${(@k)PACKAGE_MANAGERS}"; do
 
@@ -78,7 +78,7 @@ for PKG_MAN in "${(@k)PACKAGE_MANAGERS}"; do
 			unzip /tmp/exa.zip -d /tmp
 			EXA_NAME=`ls /tmp | grep  exa-linux`
 			sudo mv /tmp/$EXA_NAME /usr/bin/exa
-			sudo chmod a+x /usr/bin/exa
+			sudo chmod agou+rx /usr/bin/exa
 		fi
 		#antigen bundle trapd00r/LS_COLORS
 
